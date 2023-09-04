@@ -2,8 +2,13 @@
 export default {
   content: ["./index.html",
     "./src/**/*.{html,js,jsx}"],
+  darkMode: "class",
   theme: {
-    extend: {},
+    extend: {
+      colors: {
+        chestnut: '#973F29'
+      }
+    },
   },
   plugins: [],
 }

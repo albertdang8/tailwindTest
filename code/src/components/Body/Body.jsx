@@ -1,6 +1,19 @@
-import React from "react";
+import React, { useEffect } from "react";
 
 const Body = () => {
+  useEffect(() => {
+    const toggleDark = document.getElementById("toggleDark");
+
+    const handleDarkModeToggle = () => {
+      document.documentElement.classList.toggle("dark");
+    };
+
+    toggleDark.addEventListener("click", handleDarkModeToggle);
+
+    return () => {
+      toggleDark.removeEventListener("click", handleDarkModeToggle);
+    };
+  }, []);
   return (
     <main className="p-5">
       <h1 className="text-center text-lg text-green-400">Hello World</h1>
@@ -42,7 +55,29 @@ const Body = () => {
           Item 5
         </li>
       </ul>
-      <h3 className="bg-red-500">test</h3>
+      {/* Theme 'dark: class' */}
+      {/* card class for concise code in the index.css file */}
+      <div className="card dark:bg-gray-500">
+        <h3 className="text-base font-medium tracking-tight text-slate-900 dark:text-white">
+          This is a text element
+        </h3>
+        <p className="mt-2 text-sm text-slate-500 dark:text-blue-100">
+          This is an even longer p tag element
+        </p>
+        <button
+          id="toggleDark"
+          className="text-blue-900 px-4 py-2 text-sm font-medium mt-8 bg-blue-100 rounded-md"
+        >
+          Toggle Dark Mode
+        </button>
+      </div>
+
+      {/* custom styles. 'inline customization then tailwind.config(yes go to that file) */}
+      <p className="text-[2rem] text-chestnut bg-stone-100 p-[16px]">
+        Chestnut colour.
+      </p>
+      {/* index.css file to see long tailwind css into a reusable component 45:00 */}
+      <button className="button">Hi</button>
     </main>
   );
 };
