@@ -7,7 +7,7 @@ const Body = () => {
       <div className="my-4 h-10 w-full rounded-md border-2 border-violet-600 bg-violet-200 p-2">
         <p className="font-mono-font-extrabold text-center">A div</p>
       </div>
-      <div className="fixed top-0 h-10 w-10 bg-red-500"></div>
+      <div className="fixed top-0 left-0 h-10 w-10 bg-red-500"></div>
       <div className="flex justify-between">
         <div className="h-16 w-16 rounded-full bg-blue-500"></div>
         <div className="h-16 w-16 rounded-full bg-blue-500"></div>
@@ -42,6 +42,7 @@ const Body = () => {
           Item 5
         </li>
       </ul>
+      <h3 className="bg-red-500">test</h3>
     </main>
   );
 };
